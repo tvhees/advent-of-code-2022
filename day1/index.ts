@@ -1,3 +1,5 @@
+import sum from "../lib/sum.ts";
+
 const parseInput = (input: string) =>
   input.split("\r\n").map((str) => (str.length ? parseInt(str) : null));
 
@@ -15,8 +17,6 @@ const groupPossessionsByElf = (input: (number | null)[]) =>
       [[]] as number[][]
     )
     .reverse();
-
-const sum = (input: number[]) => input.reduce((total, num) => total + num, 0);
 
 const sumByGroup = (input: number[][]) => input.map((group) => sum(group));
 

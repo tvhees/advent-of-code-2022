@@ -1,7 +1,7 @@
+import sum from "../lib/sum.ts";
+
 const parseInput = (input: string) =>
   input.split("\r\n").map((pair) => pair.split(" ") as [string, string]);
-
-const sum = (input: number[]) => input.reduce((total, num) => total + num, 0);
 
 const scoreStrategyOne = (input: [string, string][]) => {
   const opponentChoices = ["A", "B", "C"];
