@@ -51,7 +51,7 @@ const scoreStrategyTwo = (input: [string, string][]) => {
   return sum(input.map((round) => scoreRound(round)));
 };
 
-const strategyGuide = await Deno.readTextFile("./day2/strategy_guide.txt");
+const strategyGuide = await Deno.readTextFile("./input/day2.txt");
 
 console.log(
   `Total score following first strategy: ${scoreStrategyOne(

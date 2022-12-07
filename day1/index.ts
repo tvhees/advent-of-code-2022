@@ -23,7 +23,7 @@ const sumByGroup = (input: number[][]) => input.map((group) => sum(group));
 const takeTopN = (input: number[], n: number) =>
   input.sort((a, b) => b - a).slice(0, n);
 
-const input1 = await Deno.readTextFile("./day1/input1.txt");
+const input1 = await Deno.readTextFile("./input/day1.txt");
 const topThreeCalories = takeTopN(
   sumByGroup(groupPossessionsByElf(parseInput(input1))),
   3
