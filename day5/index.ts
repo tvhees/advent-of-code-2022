@@ -36,7 +36,6 @@ function rearrangeCrates(input: string, executeMove: StackerAlgorithm) {
   }, new Array(rows[0].length).fill([]));
 
   for (const [_match, count, from, to] of match) {
-    console.log(`Move ${count} from ${from} to ${to}`);
     columns = executeMove(
       columns,
       Number(count),
@@ -45,12 +44,7 @@ function rearrangeCrates(input: string, executeMove: StackerAlgorithm) {
     );
   }
 
-  const topCratesAfterRearrangement = columns
-    .map((col) => {
-      const crate = col.at(-1);
-      return crate || " ";
-    })
-    .join("");
+  const topCratesAfterRearrangement = columns.map((col) => col.at(-1)).join("");
 
   return topCratesAfterRearrangement;
 }
