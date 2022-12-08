@@ -22,11 +22,9 @@ function rearrangeCrates(input: string, executeMove: StackerAlgorithm) {
     .reverse()
     .slice(1);
 
-  const parseMoveRegex = /move (\d+) from (\d+) to (\d+)/;
+  const parseMoveRegex = /move (\d+) from (\d+) to (\d+)/g;
 
-  const match = movesString
-    .split("\r\n")
-    .map((move) => move.match(parseMoveRegex)!);
+  const match = movesString.matchAll(parseMoveRegex);
 
   let columns = rows.reduce((cols, row) => {
     row.forEach((item, index) => {
