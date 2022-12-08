@@ -1,3 +1,4 @@
+import chunkArray from "../lib/chunkArray.ts";
 import sum from "../lib/sum.ts";
 
 const input = await Deno.readTextFile("./input/day3.txt");
@@ -12,19 +13,6 @@ function scoreItem(char: string) {
 
 function halveString(str: string) {
   return [str.slice(0, str.length / 2), str.slice(str.length / 2)];
-}
-
-function chunkArray<T>(arr: T[], size: number) {
-  return arr.reduce((chunks, item, index) => {
-    const chunkIndex = Math.floor(index / size);
-    if (!chunks[chunkIndex]) {
-      chunks.push([]);
-    }
-
-    chunks[chunkIndex].push(item);
-
-    return chunks;
-  }, [] as T[][]);
 }
 
 function sumRepeatedItems(groups: string[][]) {
