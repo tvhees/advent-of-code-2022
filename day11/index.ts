@@ -103,8 +103,6 @@ const worriedMonkeyActivity = watchMonkeys(
   .map((monkey) => monkey.inspections)
   .toSorted((b, a) => a - b);
 
-console.log(worriedMonkeyActivity);
-
 console.log(
   `Monkey business over 10000 rounds, not reducing worry after inspection: ${
     worriedMonkeyActivity[0] * worriedMonkeyActivity[1]
